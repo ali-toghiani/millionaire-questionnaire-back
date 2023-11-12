@@ -27,33 +27,36 @@
   "questions": [
     {
       "id": 1,
-      "title": "adf",
-      "point": 5,
-      "correct_answer_ids": [
-        1
-      ],
+      "title": "What is the capital of Canada?",
       "answers": [
         {
-          "value": "a",
-          "label": "a",
-          "id": 0
+          "id": 1,
+          "label": "Quebec",
+          "value": null
         },
         {
-          "value": "b",
-          "label": "b",
-          "id": 1
+          "id": 2,
+          "label": "Toronto",
+          "value": null
         },
         {
-          "value": "c",
-          "label": "c",
-          "id": 2
+          "id": 3,
+          "label": "Ottawa",
+          "value": null
         },
         {
-          "value": "d",
-          "label": "d",
-          "id": 3
+          "id": 4,
+          "label": "Ontario",
+          "value": null
+        },
+        {
+          "id": 5,
+          "label": "Yukon",
+          "value": null
         }
-      ]
+      ],
+      "correct_answer_ids": [3],
+      "point": 15
     },
     {
       "id": 2,
