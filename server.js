@@ -9,16 +9,29 @@ server.use(jsonServer.bodyParser);
 server.post('/users', (req, res, next) => {
   const emailToCheck = req.body.email;
 
-  // Check if an object with the same email already exists
   const existingUser = router.db.get('users').find({ email: emailToCheck }).value();
 
   if (existingUser) {
     return res.status(400).json({ error: 'Email already exists' });
   }
 
-  // If email is unique, proceed to add the new user
   next();
 });
+
+server.get('/users', (req, res, next) => {
+  const emailToCheck = req.query.email;
+  const passToCheck = req.query.password;
+
+  const existingUser = router.db.get('users').find({ email: emailToCheck, password: passToCheck }).value();
+
+  if (existingUser) {
+    return res.status(200).json({ ...existingUser });
+  } else {
+    return res.status(401).json({ error: "User not found"});
+  }
+  next();
+});
+
 
 server.use(router);
 server.listen(3000, () => {
